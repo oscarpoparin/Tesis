@@ -8,7 +8,7 @@
         <title>Tesis</title>
         <!------------------------- ESTILOS ---------------------------------------------->
         <link rel="stylesheet" href="assets/css/navbar.css" />
-        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/dashboard.css" />
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
         <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -20,7 +20,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
     </head>
-    <body>
+    <body style="background: #343a40;">
         <div class="navbar-top" id="navbar-top">
             <div class="logo-mobile">
                 <img class="logo-mobile-img" src="assets/img/logo-transparent.png" alt="logotipo" />
@@ -169,126 +169,100 @@
                 </li>
             </ul>
         </div>
-        <!--Cuerpo de la pagina-->
-        <div class="main">
-            <div class="container-movil container-desktop">
-                <div class="cards c1">
-                    <div class="card-header">
-                        <h5 class="card-title">alumnos</h5>
-                        <div class="icons-main">
-                            <i class="bi bi-people-fill icon"></i>
+        <!--Cuerpo-->
+        <br>
+        <div class="container border border-dark p-2 border-opacity-10 mt-5" style="background: #343a40;">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col">
+                        <div class="card-body border border-light rounded p-2">
+                            <h5 class="card-title text-light text-uppercase p-3 fs-6">alumnos inscritos</h5>
+                            <div class="body-card">
+                                <div class="icon-card">
+                                    <i class="bi bi-people-fill icon fs-5"></i>
+                                </div>
+                                <div class="text-card">
+                                    <h3 class="text-light fs-5">1,500</h3>
+                                </div>
+                                <div class="line-card">
+                                    <hr class="line">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="cards-body">
-                        <p class="card-text-main">1,500</p>
-                        <div class="container-card-icon">
-                            <i class="bi bi-arrow-up-circle-fill icon-main"></i>
-                            <p class="card-text-body">10%</p>
-                            <span class="span-card">Ingresos</span>
+                    <div class="col">
+                        <div class="card-body border border-light rounded p-2">
+                            <h5 class="card-title text-light text-uppercase p-3 fs-6">alumnos egresados</h5>
+                            <div class="body-card">
+                                <div class="icon-card">
+                                    <i class="bi bi-people-fill icon fs-5"></i>
+                                </div>
+                                <div class="text-card">
+                                    <h3 class="text-light fs-5">1,500</h3>
+                                </div>
+                                <div class="line-card">
+                                    <hr class="line">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="cards c2">
-                    <div class="card-header">
-                        <h5 class="card-title">alumnos</h5>
-                        <div class="icons-main">
-                            <i class="bi bi-people-fill icon"></i>
+                    <div class="col">
+                        <div class="card-body border border-light rounded p-2">
+                            <h5 class="card-title text-light text-uppercase p-3 fs-6">total de docentes</h5>
+                            <div class="body-card">
+                                <div class="icon-card">
+                                    <i class="bi bi-mortarboard-fill icon fs-5"></i>
+                                </div>
+                                <div class="text-card">
+                                    <h3 class="text-light fs-5">1,500</h3>
+                                </div>
+                                <div class="line-card">
+                                    <hr class="line">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="cards-body">
-                        <p class="card-text-main">1,500</p>
-                        <div class="container-card-icon">
-                            <i class="bi bi-arrow-down-circle-fill icon-main2"></i>
-                            <p class="card-text-body">5%</p>
-                            <span class="span-card">Egreso</span>
+                    <div class="col">
+                        <div class="card-body border border-light rounded p-2">
+                            <h5 class="card-title text-light text-uppercase p-3 fs-6">asistencia del dia</h5>
+                            <div class="body-card">
+                                <div class="icon-card">
+                                    <i class="bi bi-person-check-fill icon fs-5"></i>
+                                </div>
+                                <div class="text-card">
+                                    <h3 class="text-light fs-5">1,500</h3>
+                                </div>
+                                <div class="line-card">
+                                    <hr class="line">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="c3">
-                    <h2>Grafica Alumnos</h2>
-                    <canvas id="alumnos" class="text-dark"></canvas>
-                </div>
-                <!--Profesores-->
-                <div class="cards c4">
-                    <div class="card-header">
-                        <h5 class="card-title">profesores</h5>
-                        <div class="icons-main">
-                            <i class="bi bi-people-fill icon"></i>
-                        </div>
-                    </div>
-                    <div class="cards-body">
-                        <p class="card-text-main">1,500</p>
-                        <div class="container-card-icon">
-                            <i class="bi bi-arrow-up-circle-fill icon-main"></i>
-                            <p class="card-text-body">10%</p>
-                            <span class="span-card">Ingresos</span>
-                        </div>
-                    </div>
-                </div>
-                <!--Asistencia del dia-->
-                <div class="cards c5">
-                    <div class="card-header">
-                        <h5 class="card-title">Asistencia del dia</h5>
-                        <div class="icons-main">
-                            <i class="bi bi-people-fill icon"></i>
-                        </div>
-                    </div>
-                    <div class="cards-body">
-                        <p class="card-text-main">1,500</p>
-                        <div class="container-card-icon">
-                            <i class="bi bi-arrow-down-circle-fill icon-main2"></i>
-                            <p class="card-text-body">5%</p>
-                            <span class="span-card">Asistencia</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="c6">
-                    <h2>Grafica Asistencia</h2>
-                    <canvas id="docentes"></canvas>
-                </div>
-                <!--pagos-->
-                <div class="cards c7">
-                    <div class="card-header">
-                        <h5 class="card-title">pagos</h5>
-                        <div class="icons-main">
-                            <i class="bi bi-people-fill icon"></i>
-                        </div>
-                    </div>
-                    <div class="cards-body">
-                        <p class="card-text-main">1,500</p>
-                        <div class="container-card-icon">
-                            <i class="bi bi-arrow-up-circle-fill icon-main"></i>
-                            <p class="card-text-body">10%</p>
-                            <span class="span-card">Ingresos</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="cards c8">
-                    <div class="card-header">
-                        <h5 class="card-title">pagos</h5>
-                        <div class="icons-main">
-                            <i class="bi bi-people-fill icon"></i>
-                        </div>
-                    </div>
-                    <div class="cards-body">
-                        <p class="card-text-main">1,500</p>
-                        <div class="container-card-icon">
-                            <i class="bi bi-arrow-down-circle-fill icon-main2"></i>
-                            <p class="card-text-body">5%</p>
-                            <span class="span-card">Adeudos</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="c9">
-                    <h2>Grafica Pagos</h2>
-                    <canvas id="pagos"></canvas>
                 </div>
             </div>
-            <!--FOOTER-->
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col">
+                        <h2>Grafica Alumnos</h2>
+                        <canvas id="alumnos" class="text-dark"></canvas>
+                    </div>
+                    <div class="col">
+                        <h2>Grafica Asistencia</h2>
+                        <canvas id="docentes"></canvas>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h2>Grafica Pagos</h2>
+                        <canvas id="pagos"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!--FOOTER--
             <footer>
-                <p>2023 © Oscar Reyes Ponciano</p>
-                <p>version 1</p>
-            </footer>
+              <p>2023 © Oscar Reyes Ponciano</p>
+              <p>version 1</p>
+            </footer>-->
         </div>
         <!----------------------------scripts----------------------------------------------->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -305,4 +279,6 @@
         <script src="assets/js/script.js"></script>
     </body>
 </html>
-<% } else { response.sendRedirect("login.jsp"); } %>
+<% } else {
+        response.sendRedirect("login.jsp");
+    }%>

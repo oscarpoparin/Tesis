@@ -1,0 +1,50 @@
+:root {
+    --body: #343a40;
+    --navBar: #3a444e;
+    --card: #656e77b7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: var(--body);
+    overflow-x: hidden;
+}
+
+.body-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.icon-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.text-card {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.line-card {
+    grid-column: 1/-1;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.line {
+    width: 100%;
+    border: 2px solid #fff;
+    margin-top: 0px;
+}
