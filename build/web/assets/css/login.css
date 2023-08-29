@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+/*
+* * Style Login Template
+*/
+
+body {
+    background-image: url("../img/fondo1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container-form{
+    background-color: #1d2b3ac9;
+    border-radius: 10px;
+    width: 300px;
+    height: 400px;
+    max-height: 400px;
+}
+
+form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+h2{
+    margin: 15px;
+    color: rgba(255, 255, 255, 0.712);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.inputBox{
+    position: relative;
+    width: 250px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputBox input{
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.829);
+    border: 1px solid rgba(255, 255, 255, 0.712);
+    font-size: 1.15em;
+    letter-spacing: 0.09em;
+}
+
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 15px 40px;
+    pointer-events: none;
+    font-size: 1em;
+    transition: 0.5s;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.712);
+    letter-spacing: 0.1em;
+}
+
+.inputBox input:focus ~ span{
+    color: rgba(255, 255, 255, 0.712);
+    font-size: 0.75em;
+    transform: translateX(20px) translateY(-24px);
+    padding: 0 5px;
+    background:rgba(97, 96, 96, 0.904);
+    border: 1px solid rgba(255, 255, 255, 0.712);
+    -webkit-transform: translateX(20px) translateY(-24px);
+    -moz-transform: translateX(20px) translateY(-24px);
+    -ms-transform: translateX(20px) translateY(-24px);
+    -o-transform: translateX(20px) translateY(-24px);
+}
+
+.key{
+    position: absolute;
+    left: 0;
+    padding: 15px 20px;
+    color: rgba(255, 255, 255, 0.712);
+}
+
+input[type="submit"]{
+    width: 60%;
+    margin-top: 15px;
+    padding: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.712);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.712);
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background:rgba(97, 96, 96, 0.904);
+}
+
+.link{
+    width: 100%;
+    margin-top: 40px;
+    text-align: right;
+}
+
+.link .enlace,
+.link .link-forgot{
+    padding: 5px 10px;
+    text-align: right;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    font-size: 0.70em;
+    color: rgba(255, 255, 255, 0.712);
+    cursor: pointer;
+}
+
+/************/
+/** LOGOUT **/
+/************/
+
+.hidden{
+    display: none;
+}
+
+.forgout{
+    width: 400px;
+    height: 250px;
+    background-color: #1d2b3ac9;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.forgout h3{
+    color: rgba(255, 255, 255, 0.712);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.forgout form{
+    width: 100%;
+    height: auto;
+}
+
+.forgout .p{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.p a{
+    padding: 5px 10px;
+    text-align: right;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    font-size: 0.70em;
+    color: rgba(255, 255, 255, 0.712);
+    cursor: pointer;
+}
+
+/**************************/
+/** DISPOSITIVOS GRANDES **/
+/**************************/
+
+@media screen and (min-width: 992px) {
+    body {
+        background-image: url("../img/fondo.jpg");
+        background-repeat: repeat;
+        background-size:cover;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 35vh;
+    }
+}
+
