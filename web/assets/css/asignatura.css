@@ -1,0 +1,31 @@
+.container-fluid1 {
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
+@media screen and (min-width: 992px) {
+    .container-fluid1, .prueba{
+        width: calc(100% - 70px);
+        padding: 20px;
+        height: 100vh;
+    }
+
+    .t-h-max{
+        max-height: 500px;
+        overflow: auto;
+    }
+}
+
+@media (min-height: 700px){
+
+  .t-h-max{
+    max-height: 600px;
+    overflow: auto;
+  }
+
+  .tb-scroll{
+    width: 100%;
+    overflow: hidden;
+  }
+  
+}

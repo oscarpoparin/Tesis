@@ -72,6 +72,10 @@ public class Usuarios {
         return "Usuario [id=" + id + ", nombre=" + nombre + ", paterno=" + paterno + ", materno=" + materno
                 + ", correo=" + correo + ", identificador=" + identificador + ", rol=" + rol + "]";
     }
+    
+    public String getNombreCompleto() {
+        return nombre + " " + paterno + " " + materno;
+    }
 
     
 }

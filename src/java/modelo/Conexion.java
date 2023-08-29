@@ -1,10 +1,10 @@
 package modelo;
 
-import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
+
 
 public class Conexion {
     
@@ -23,7 +23,8 @@ public class Conexion {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url,user,password);
         }catch(SQLException e){
-            LOGGER.log(Level.SEVERE, "Error al conectar a la base de datos", e);
+            //LOGGER.log(Level.SEVERE, "Error al conectar a la base de datos", e);
+            System.out.println("Error al conectar a la base de datos" + e);
         }
         return con;
     }

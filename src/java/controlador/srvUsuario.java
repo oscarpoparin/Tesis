@@ -100,17 +100,17 @@ public class srvUsuario extends HttpServlet {
             sesion  = request.getSession();
             sesion.setAttribute("usuario", usuario);
             request.setAttribute("msje", "Bievenido al sistema");
-            this.getServletConfig().getServletContext().getRequestDispatcher("/vistas/index.jsp").forward(request, response);
+            this.getServletConfig().getServletContext().getRequestDispatcher("/vistas/administrador/index.jsp").forward(request, response);
         }else if (usuario != null && usuario.getRol().getDescripcion().equals("Alumno")){
             sesion  = request.getSession();
             sesion.setAttribute("alumno", usuario);
             request.setAttribute("msje", "Bievenido al sistema");
-            this.getServletConfig().getServletContext().getRequestDispatcher("/vistas/Alumno.jsp").forward(request, response);
+            this.getServletConfig().getServletContext().getRequestDispatcher("/vistas/alumno/Alumno.jsp").forward(request, response);
         }else if (usuario != null && usuario.getRol().getDescripcion().equals("Profesor")){
             sesion  = request.getSession();
             sesion.setAttribute("profesor", usuario);
             request.setAttribute("msje", "Bievenido al sistema");
-            this.getServletConfig().getServletContext().getRequestDispatcher("/vistas/Profesor.jsp").forward(request, response);
+            this.getServletConfig().getServletContext().getRequestDispatcher("/vistas/profesor/Profesor.jsp").forward(request, response);
         }else{
             request.setAttribute("msje", "Credenciales incorrectas");
             request.getRequestDispatcher("login.jsp").forward(request, response);
