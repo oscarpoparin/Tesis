@@ -1,6 +1,6 @@
 CREATE DATABASE tesis1;
 
-USE tesis;
+USE tesis1;
 
 CREATE TABLE tb_roles(
     rol INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
@@ -34,10 +34,10 @@ CREATE TABLE tb_alumnos(
     cp VARCHAR(8) NOT NULL,
     calle VARCHAR(50) NOT NULL,
     rol INT,
-    FOREIGN KEY (rol) REFERENCES tb_rol(rol) ON DELETE CASCADE
+    FOREIGN KEY (rol) REFERENCES tb_roles(rol) ON DELETE CASCADE
 );
 
-CREATE TABLE tb_ tutores(
+CREATE TABLE tb_tutores(
     id_tutor VARCHAR(8) PRIMARY KEY NOT NULL UNIQUE,
     nombre VARCHAR(50) NOT NULL,
     paterno VARCHAR(50) NOT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE tb_grupos(
 
 -- TABLAS RELACIONADAS CON LOS PROFESORES
 CREATE TABLE tb_profesores(
-    id_profesro VARCHAR(8) PRIMARY KEY NOT NULL UNIQUE,
+    id_profesor VARCHAR(8) PRIMARY KEY NOT NULL UNIQUE,
     nombre VARCHAR(50) NOT NULL,
     paterno VARCHAR(50) NOT NULL,
     materno VARCHAR(50) NOT NULL,
