@@ -18,9 +18,14 @@ body {
     overflow-x: hidden;
 }
 
+.card-body{
+    background: var(--navBar);
+}
+
 .body-card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    background: var(--navBar);
 }
 
 .icon-card {

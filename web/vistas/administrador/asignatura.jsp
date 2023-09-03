@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% if (session.getAttribute("usuario") != null) { %>
+<% if (session.getAttribute("usuario") != null) {%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,7 +9,6 @@
         <!------------------------- ESTILOS ---------------------------------------------->
         <link rel="stylesheet" href="assets/css/navbar.css" />
         <link rel="stylesheet" href="assets/css/style.css" />
-        <link rel="stylesheet" href="assets/css/asignatura.css" />
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
         <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -20,9 +19,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-        <link rel="stylesheet" href="assets/css/app-saas.min.css">
     </head>
-    <body>
+    <body style="background: #343a40;">
         <div class="navbar-top" id="navbar-top">
             <div class="logo-mobile">
                 <img class="logo-mobile-img" src="assets/img/logo-transparent.png" alt="logotipo" />
@@ -103,7 +101,6 @@
                         <h2 id="name">${usuario.nombreCompleto}</h2>
                         <h3 id="cargo">${usuario.rol.descripcion}</h3>
                     </span>
-                    <!--<div class="list-conf" id="listConf">-->
                     <ul class="dropdown-menu listConfig">
                         <li>
                             <a class="dropdown-item" href="./indexCuenta.html" onclick="myAccount('./indexCuenta.html')">mi cuenta</a>
@@ -116,7 +113,6 @@
                             <a class="dropdown-item" href="srvUsuario?accion=cerrar" onclick="cerrarSesion()">salir</a>
                         </li>
                     </ul>
-                    <!--</div>-->
                 </div>
             </div>
         </div>
@@ -174,252 +170,333 @@
             </ul>
         </div>
         <!--Cuerpo de la pagina-->
-        <div class="main">
-            <div class="container-fluid1">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box">
-                            <h4 class="page-title">Lista Asignatura</h4>
-                        </div>
+        <br>
+        <div class="container container-xl p-2 border-opacity-10 mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="container">
+                        <h4 class="text-uppercase text-light">Lista Asignatura</h4>
                     </div>
                 </div>
-                <div class="row g-3 d-flex justify-content-around">
-                    <div class="col-auto col-auto">
-                        <form action="" class="row gy-2 gx-2 align-items-center justify-content-xl-start justify-content-between">
-                            <div class="col-auto bg-dark">
-                                <label for="inputPassword2" class="visually-hidden bg-dark">Buscar</label>
-                                <input type="search" class="form-control bg-dark text-bg-primary border border-2 border-secondary"
-                                       id="claveNombre" placeholder="Ingresa clave o nombre">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-auto ">
-                        <select class="form-select form-select-sm bg-dark text-bg-primary border border-2 border-secondary"
-                                aria-label=".form-select-lg example" id="grado">
-                            <option selected>Grado</option>
-                            <option value="1">Primero</option>
-                            <option value="2">Segundo</option>
-                            <option value="3">Tercero</option>
-                            <option value="4">Cuarto</option>
-                            <option value="5">Quinto</option>
-                            <option value="6">Sexto</option>
-                            <option value="7">Ninguno</option>
-                        </select>
-                    </div>
+            </div>
+            <div class="row g-3 d-flex justify-content-around mt-1">
+                <div class="col-auto col-auto">
                     <div class="col-auto">
-                        <select class="form-select form-select-sm bg-dark text-bg-primary border border-2 border-secondary"
-                                aria-label=".form-select-lg example" id="turno">
-                            <option selected>Turno</option>
-                            <option value="1">Matutino</option>
-                            <option value="2">Vespertino</option>
-                            <option value="3">Ninguno</option>
-                        </select>
-                    </div>
-                    <div class="col-auto">
-                        <button type="button" class="btn btn-danger mb-3 me-3">
-                            <i class="bi bi-search icon me-1"></i> Buscar
-                        </button>
+                        <input type="text" class="form-control" id="searchNombre" value="" placeholder="NombreAlumno">
                     </div>
                 </div>
-                <div class="table-responsive t-h-max">
-                    <table class="table table-dark table-hover mb-0 border-secondary">
-                        <thead>
-                            <tr>
-                                <th>Clave</th>
-                                <th>Nombre</th>
-                                <th>Grado</th>
-                                <th>Turno</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <a href="#" class="text-body fw-bold">#CM9708</a>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <div class="d-flex align-items-center justify-content-center">
-                                            <h5 class="my-0">Jerry Geiger</h5>
+                <div class="col-auto">
+                    <select class="form-select text-capitalize fs-6" aria-label="Default select example">
+                        <option selected>grado</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <select class="form-select text-capitalize fs-6" aria-label="Default select example">
+                        <option selected>turno</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-danger mb-3 me-3">
+                        <i class="bi bi-search icon me-1"></i> Buscar
+                    </button>
+                </div>
+            </div>
+            <div class="row p-2 mt-1">
+                <div class="container">
+                    <div class="table-responsive t-h-max">
+                        <table class="table table-dark table-hover mb-0 border-secondary">
+                            <thead>
+                                <tr class="text-uppercase">
+                                    <th>clave</th>
+                                    <th>nombre</th>
+                                    <th>grado</th>
+                                    <th>turno</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg text-capitalize">
+                                <tr>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6 class="text-uppercase">clave</h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>Grado</td>
-                                <td>
-                                    <h5 class="my-0">Turno</h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" class="text-body fw-bold">#CM9708</a>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <div class="d-flex align-items-center">
-                                            <h5 class="my-0">Jerry Geiger</h5>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>nombre</h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>Grado</td>
-                                <td>
-                                    <h5 class="my-0">Turno</h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" class="text-body fw-bold">#CM9708</a>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <div class="d-flex align-items-center">
-                                            <h5 class="my-0">Jerry Geiger</h5>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>grado</h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>Grado</td>
-                                <td>
-                                    <h5 class="my-0">Turno</h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" class="text-body fw-bold">#CM9708</a>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <div class="d-flex align-items-center">
-                                            <h5 class="my-0">Jerry Geiger</h5>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>turno</h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>Grado</td>
-                                <td>
-                                    <h5 class="my-0">Turno</h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" class="text-body fw-bold">#CM9708</a>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <div class="d-flex align-items-center">
-                                            <h5 class="my-0">Jerry Geiger</h5>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6 class="text-uppercase">clave</h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>Grado</td>
-                                <td>
-                                    <h5 class="my-0">Turno</h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" class="text-body fw-bold">#CM9708</a>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <div class="d-flex align-items-center">
-                                            <h5 class="my-0">Jerry Geiger</h5>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>nombre</h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>Grado</td>
-                                <td>
-                                    <h5 class="my-0">Turno</h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" class="text-body fw-bold">#CM9708</a>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <div class="d-flex align-items-center">
-                                            <h5 class="my-0">Jerry Geiger</h5>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>grado</h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>Grado</td>
-                                <td>
-                                    <h5 class="my-0">Turno</h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" class="text-body fw-bold">#CM9708</a>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <div class="d-flex align-items-center">
-                                            <h5 class="my-0">Jerry Geiger</h5>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>turno</h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>Grado</td>
-                                <td>
-                                    <h5 class="my-0">Turno</h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" class="text-body fw-bold">#CM9708</a>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <div class="d-flex align-items-center">
-                                            <h5 class="my-0">Jerry Geiger</h5>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6 class="text-uppercase">clave</h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>Grado</td>
-                                <td>
-                                    <h5 class="my-0">Turno</h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" class="text-body fw-bold">#CM9708</a>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <div class="d-flex align-items-center">
-                                            <h5 class="my-0">Jerry Geiger</h5>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>nombre</h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>Grado</td>
-                                <td>
-                                    <h5 class="my-0">Turno</h5>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="#" class="text-body fw-bold">#CM9708</a>
-                                </td>
-                                <td>
-                                    <div class="d-flex">
-                                        <div class="d-flex align-items-center">
-                                            <h5 class="my-0">Jerry Geiger</h5>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>grado</h6>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>Grado</td>
-                                <td>
-                                    <h5 class="my-0">Turno</h5>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>turno</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6 class="text-uppercase">clave</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>nombre</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>grado</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>turno</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6 class="text-uppercase">clave</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>nombre</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>grado</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>turno</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6 class="text-uppercase">clave</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>nombre</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>grado</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>turno</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6 class="text-uppercase">clave</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>nombre</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>grado</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>turno</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6 class="text-uppercase">clave</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>nombre</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>grado</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>turno</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6 class="text-uppercase">clave</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>nombre</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>grado</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="d-flex align-content-center justify-content-center">
+                                                <h6>turno</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-        <!--FOOTER-->
-        <footer>
-            <p>2023 © Oscar Reyes Ponciano</p>
-            <p>version 1</p>
-        </footer>
         <!----------------------------scripts----------------------------------------------->
-        <script src="assets/js/app.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://unpkg.com/popper.js@1"></script>
         <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
@@ -427,67 +504,64 @@
                 integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js"
-                integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="assets/js/tooltippy.js"></script>
-        <script src="assets/js/script.js"></script>
         <script>
-            var servletPath = '<%= request.getServletPath()%>';
-            var contexto = '<%= request.getContextPath()%>';
-            var i = '/vistas/administrador/index.jsp';
-            var a = '/vistas/administrador/asignatura.jsp';
-            var d = '/vistas/administrador/docentes.jsp';
-            var al = '/vistas/administrador/alumnos.jsp';
-            var p = '/vistas/administrador/pagos.jsp';
-            var ap = '/vistas/administrador/aprovechamiento.jsp';
-            var c = '/vistas/administrador/calendario.jsp';
+                              var servletPath = '<%= request.getServletPath()%>';
+                              var contexto = '<%= request.getContextPath()%>';
+                              var i = '/vistas/administrador/index.jsp';
+                              var a = '/vistas/administrador/asignatura.jsp';
+                              var d = '/vistas/administrador/docentes.jsp';
+                              var al = '/vistas/administrador/alumnos.jsp';
+                              var p = '/vistas/administrador/pagos.jsp';
+                              var ap = '/vistas/administrador/aprovechamiento.jsp';
+                              var c = '/vistas/administrador/calendario.jsp';
 
-            const elementoEspecifico1 = document.querySelector('#mi-lista .li:nth-child(1)');
-            const elementoEspecifico2 = document.querySelector('#mi-lista .li:nth-child(2)');
-            const elementoEspecifico3 = document.querySelector('#mi-lista .li:nth-child(3)');
-            const elementoEspecifico4 = document.querySelector('#mi-lista .li:nth-child(4)');
-            const elementoEspecifico5 = document.querySelector('#mi-lista .li:nth-child(5)');
-            const elementoEspecifico6 = document.querySelector('#mi-lista .li:nth-child(6)');
-            const elementoEspecifico7 = document.querySelector('#mi-lista .li:nth-child(7)');
+                              const elementoEspecifico1 = document.querySelector('#mi-lista .li:nth-child(1)');
+                              const elementoEspecifico2 = document.querySelector('#mi-lista .li:nth-child(2)');
+                              const elementoEspecifico3 = document.querySelector('#mi-lista .li:nth-child(3)');
+                              const elementoEspecifico4 = document.querySelector('#mi-lista .li:nth-child(4)');
+                              const elementoEspecifico5 = document.querySelector('#mi-lista .li:nth-child(5)');
+                              const elementoEspecifico6 = document.querySelector('#mi-lista .li:nth-child(6)');
+                              const elementoEspecifico7 = document.querySelector('#mi-lista .li:nth-child(7)');
 
-            if (servletPath === i) {
-                console.log("index");
-            } else if (servletPath === a) {
-                console.log("asignatura");
+                              if (servletPath === i) {
+                                  console.log("index");
+                              } else if (servletPath === a) {
 
-                elementoEspecifico1.style.background = '#3a444e';
-                elementoEspecifico2.style.background = '#343a40';
-                elementoEspecifico3.style.background = '#3a444e';
-                elementoEspecifico4.style.background = '#3a444e';
-                elementoEspecifico5.style.background = '#3a444e';
-                elementoEspecifico6.style.background = '#3a444e';
-                elementoEspecifico7.style.background = '#3a444e';
+                                  elementoEspecifico1.style.background = '#3a444e';
+                                  elementoEspecifico2.style.background = '#343a40';
+                                  elementoEspecifico3.style.background = '#3a444e';
+                                  elementoEspecifico4.style.background = '#3a444e';
+                                  elementoEspecifico5.style.background = '#3a444e';
+                                  elementoEspecifico6.style.background = '#3a444e';
+                                  elementoEspecifico7.style.background = '#3a444e';
 
-            } else if (servletPath === d) {
-                console.log("docentes");
-            } else if (servletPath === al) {
-                console.log("alumnos");
-            } else if (servletPath === p) {
-                console.log("pagos");
-            } else if (servletPath === ap) {
-                console.log("aprovechamiento");
-            } else if (servletPath === c) {
-                console.log("calendario");
-            } else {
-                alert("Error");
-            }
+                              } else if (servletPath === d) {
+                                  console.log("docentes");
+                              } else if (servletPath === al) {
+                                  console.log("alumnos");
+                              } else if (servletPath === p) {
+                                  console.log("pagos");
+                              } else if (servletPath === ap) {
+                                  console.log("aprovechamiento");
+                              } else if (servletPath === c) {
+                                  console.log("calendario");
+                              } else {
+                                  alert("Error");
+                              }
 
-            const screenSize = window.matchMedia("(max-width: 992px)");
-            const div = document.getElementById("spanName");
+                              const screenSize = window.matchMedia("(max-width: 992px)");
+                              const div = document.getElementById("spanName");
 
-            if (screenSize.matches) {
-                div.style.display = "none";
-            } else {
-                div.style.display = "flex";
-            }
+                              if (screenSize.matches) {
+                                  div.style.display = "none";
+                              } else {
+                                  div.style.display = "flex";
+                              }
         </script>
     </body>
 </html>
-<% } else { response.sendRedirect("login.jsp"); } %>
+<% } else {
+        response.sendRedirect("login.jsp");
+    }%>
 

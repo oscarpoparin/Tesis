@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% if (session.getAttribute("usuario") != null) { %>
+<% if (session.getAttribute("usuario") != null) {%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,7 +20,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
     </head>
-    <body>
+    <body style="background: #343a40;">
         <div class="navbar-top" id="navbar-top">
             <div class="logo-mobile">
                 <img class="logo-mobile-img" src="assets/img/logo-transparent.png" alt="logotipo" />
@@ -170,16 +170,420 @@
             </ul>
         </div>
         <!--Cuerpo de la pagina-->
-
-
-
-        <!--FOOTER-->
-
-        <footer>
-            <p>2023 © Oscar Reyes Ponciano</p>
-            <p>version 1</p>
-        </footer>
-
+        <br>
+        <div class="container container-xl p-2 border-opacity-10 mt-5">
+            <div class="row container">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="text-light text-uppercase">lista de alumnos</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-flex justify-content-end p-2">
+                                <button type="button" class="btn btn-danger" id="search">
+                                    <i class="bi bi-search icon me-1"></i> Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="searchNombre" value="" placeholder="NombreAlumno">
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-4">
+                            <select class="form-select text-capitalize fs-6" aria-label="Default select example">
+                                <option selected>grado</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <select class="form-select text-capitalize fs-6" aria-label="Default select example">
+                                <option selected>grupo</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <select class="form-select text-capitalize fs-6" aria-label="Default select example">
+                                <option selected>turno</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="container mt-4">
+                        <div class="table-responsive t-h-max">
+                            <table class="table table-dark table-hover mb-0 border-secondary">
+                                <thead>
+                                    <tr class="text-uppercase">
+                                        <th scope="col">nombre</th>
+                                        <th scope="col">grado</th>
+                                        <th scope="col">grupo</th>
+                                        <th scope="col">turno</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg text-capitalize">
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>nombre completo</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>grado</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>nombre completo</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>grado</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>nombre completo</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>grado</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>nombre completo</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>grado</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>nombre completo</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>grado</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>nombre completo</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>grado</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>nombre completo</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>grado</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>nombre completo</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>grado</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>nombre completo</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>grado</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>nombre completo</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>grado</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>nombre completo</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>grado</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>turno</h6>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row p-2">
+                        <div class="col-12 p-4">
+                            <h4 class="text-light text-uppercase text-center">Calificaciones Asignaturas</h4>
+                            <canvas id="asignatura"></canvas>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col-12 p-4">
+                            <h4 class="text-light text-uppercase text-center">Calificaciones por Parcial</h4>
+                            <canvas id="parcial"></canvas>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!----------------------------scripts----------------------------------------------->
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -193,62 +597,64 @@
                 integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="assets/js/tooltippy.js"></script>
-        <script src="assets/js/script.js"></script>
+        <script src="assets/js/aprovechamiento.js"></script>
         <script>
-            var servletPath = '<%= request.getServletPath()%>';
-            var contexto = '<%= request.getContextPath()%>';
-            var i = '/vistas/administrador/index.jsp';
-            var a = '/vistas/administrador/asignatura.jsp';
-            var d = '/vistas/administrador/docentes.jsp';
-            var al = '/vistas/administrador/alumnos.jsp';
-            var p = '/vistas/administrador/pagos.jsp';
-            var ap = '/vistas/administrador/aprovechamiento.jsp';
-            var c = '/vistas/administrador/calendario.jsp';
+                              var servletPath = '<%= request.getServletPath()%>';
+                              var contexto = '<%= request.getContextPath()%>';
+                              var i = '/vistas/administrador/index.jsp';
+                              var a = '/vistas/administrador/asignatura.jsp';
+                              var d = '/vistas/administrador/docentes.jsp';
+                              var al = '/vistas/administrador/alumnos.jsp';
+                              var p = '/vistas/administrador/pagos.jsp';
+                              var ap = '/vistas/administrador/aprovechamiento.jsp';
+                              var c = '/vistas/administrador/calendario.jsp';
 
-            const elementoEspecifico1 = document.querySelector('#mi-lista .li:nth-child(1)');
-            const elementoEspecifico2 = document.querySelector('#mi-lista .li:nth-child(2)');
-            const elementoEspecifico3 = document.querySelector('#mi-lista .li:nth-child(3)');
-            const elementoEspecifico4 = document.querySelector('#mi-lista .li:nth-child(4)');
-            const elementoEspecifico5 = document.querySelector('#mi-lista .li:nth-child(5)');
-            const elementoEspecifico6 = document.querySelector('#mi-lista .li:nth-child(6)');
-            const elementoEspecifico7 = document.querySelector('#mi-lista .li:nth-child(7)');
+                              const elementoEspecifico1 = document.querySelector('#mi-lista .li:nth-child(1)');
+                              const elementoEspecifico2 = document.querySelector('#mi-lista .li:nth-child(2)');
+                              const elementoEspecifico3 = document.querySelector('#mi-lista .li:nth-child(3)');
+                              const elementoEspecifico4 = document.querySelector('#mi-lista .li:nth-child(4)');
+                              const elementoEspecifico5 = document.querySelector('#mi-lista .li:nth-child(5)');
+                              const elementoEspecifico6 = document.querySelector('#mi-lista .li:nth-child(6)');
+                              const elementoEspecifico7 = document.querySelector('#mi-lista .li:nth-child(7)');
 
-            if (servletPath === i) {
-                console.log("index");
-            } else if (servletPath === a) {
-                console.log("asignatura");
-            } else if (servletPath === d) {
-                console.log("docentes");
-            } else if (servletPath === al) {
-                console.log("alumnos");
-            } else if (servletPath === p) {
-                console.log("pagos");
-            } else if (servletPath === ap) {
+                              if (servletPath === i) {
+                                  console.log("index");
+                              } else if (servletPath === a) {
+                                  console.log("asignatura");
+                              } else if (servletPath === d) {
+                                  console.log("docentes");
+                              } else if (servletPath === al) {
+                                  console.log("alumnos");
+                              } else if (servletPath === p) {
+                                  console.log("pagos");
+                              } else if (servletPath === ap) {
 
-                elementoEspecifico1.style.background = '#3a444e';
-                elementoEspecifico2.style.background = '#3a444e';
-                elementoEspecifico3.style.background = '#3a444e';
-                elementoEspecifico4.style.background = '#3a444e';
-                elementoEspecifico5.style.background = '#3a444e';
-                elementoEspecifico6.style.background = '#343a40';
-                elementoEspecifico7.style.background = '#3a444e';
+                                  elementoEspecifico1.style.background = '#3a444e';
+                                  elementoEspecifico2.style.background = '#3a444e';
+                                  elementoEspecifico3.style.background = '#3a444e';
+                                  elementoEspecifico4.style.background = '#3a444e';
+                                  elementoEspecifico5.style.background = '#3a444e';
+                                  elementoEspecifico6.style.background = '#343a40';
+                                  elementoEspecifico7.style.background = '#3a444e';
 
-            } else if (servletPath === c) {
-                console.log("calendario");
-            } else {
-                 alert("Error");
-            }
+                              } else if (servletPath === c) {
+                                  console.log("calendario");
+                              } else {
+                                  alert("Error");
+                              }
 
-            const screenSize = window.matchMedia("(max-width: 992px)");
-            const div = document.getElementById("spanName");
+                              const screenSize = window.matchMedia("(max-width: 992px)");
+                              const div = document.getElementById("spanName");
 
-            if (screenSize.matches) {
-                div.style.display = "none";
-            } else {
-                div.style.display = "flex";
-            }
+                              if (screenSize.matches) {
+                                  div.style.display = "none";
+                              } else {
+                                  div.style.display = "flex";
+                              }
 
         </script>
     </body>
 </html>
-<% } else { response.sendRedirect("login.jsp"); } %>
+<% } else {
+        response.sendRedirect("login.jsp");
+    }%>

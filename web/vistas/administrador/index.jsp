@@ -169,9 +169,8 @@
                 </li>
             </ul>
         </div>
-        <!--Cuerpo-->
         <br>
-        <div class="container border border-dark p-2 border-opacity-10 mt-5" style="background: #343a40;">
+        <div class="container border border-dark p-2 border-opacity-10 mt-5">
             <div class="container mt-5">
                 <div class="row">
                     <div class="col">
@@ -242,27 +241,23 @@
             </div>
             <div class="container mt-4">
                 <div class="row">
-                    <div class="col">
-                        <h2>Grafica Alumnos</h2>
+                    <div class="col border border-light rounded m-4 p-4">
+                        <h2 class="text-light text-uppercase">Grafica Alumnos</h2>
                         <canvas id="alumnos" class="text-dark"></canvas>
                     </div>
-                    <div class="col">
-                        <h2>Grafica Asistencia</h2>
+                    <div class="col border border-light rounded m-4 p-4">
+                        <h2 class="text-light text-uppercase">Grafica Asistencia</h2>
                         <canvas id="docentes"></canvas>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <h2>Grafica Pagos</h2>
+                    <div class="col border border-light rounded m-4 p-4">
+                        <h2 class="text-light text-uppercase">Grafica Pagos</h2>
                         <canvas id="pagos"></canvas>
                     </div>
+                    <div class="col"></div>
                 </div>
             </div>
-            <!--FOOTER--
-            <footer>
-              <p>2023 © Oscar Reyes Ponciano</p>
-              <p>version 1</p>
-            </footer>-->
         </div>
         <!----------------------------scripts----------------------------------------------->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -276,9 +271,7 @@
                 integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="assets/js/tooltippy.js"></script>
-        <script src="assets/js/script.js"></script>
+        <script src="assets/js/index.js"></script>
     </body>
 </html>
-<% } else {
-        response.sendRedirect("login.jsp");
-    }%>
+<% } else { response.sendRedirect("login.jsp"); }%>
