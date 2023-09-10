@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import modelo.Alumnos;
-import modelo.DAOALUMNOS;
+import modelo.DAOAlumnos;
 import modelo.DAOUSUARIOS;
 import modelo.Usuarios;
 
@@ -20,12 +20,11 @@ public class srvUsuario extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        
         String accion = request.getParameter("accion");
-        try{
-            
-            if(accion != null){
-                switch(accion){
+        try {
+
+            if (accion != null) {
+                switch (accion) {
                     case "verificar":
                         verificar(request, response);
                         break;
@@ -35,14 +34,14 @@ public class srvUsuario extends HttpServlet {
                     default:
                         response.sendRedirect("login.jsp");
                 }
-            }else{
+            } else {
                 response.sendRedirect("login.jsp");
             }
-            
-        }catch(Exception e){
-            try{
+
+        } catch (Exception e) {
+            try {
                 this.getServletConfig().getServletContext().getRequestDispatcher("/mensaje.jsp").forward(request, response);
-            }catch(Exception ex){
+            } catch (Exception ex) {
                 System.out.println("Error" + ex.getMessage());
             }
             System.out.println("Error" + e.getMessage());
@@ -89,42 +88,69 @@ public class srvUsuario extends HttpServlet {
     }// </editor-fold>
 
     private void verificar(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        
+
         HttpSession sesion;
         DAOUSUARIOS dao;
         Usuarios usuario;
         usuario = this.obtenerUsuario(request);
         dao = new DAOUSUARIOS();
         usuario = dao.identificar(usuario);
-        if(usuario != null && usuario.getRol().getDescripcion().equals("Administrador")){
-            sesion  = request.getSession();
+        if (usuario != null && usuario.getRol().getDescripcion().equals("Administrador")) {
+            sesion = request.getSession();
             sesion.setAttribute("usuario", usuario);
             request.setAttribute("msje", "Bievenido al sistema");
             this.getServletConfig().getServletContext().getRequestDispatcher("/vistas/administrador/index.jsp").forward(request, response);
-        }else if (usuario != null && usuario.getRol().getDescripcion().equals("Alumno")){
-            sesion  = request.getSession();
+        } else if (usuario != null && usuario.getRol().getDescripcion().equals("Alumno")) {
+            sesion = request.getSession();
             sesion.setAttribute("alumno", usuario);
             request.setAttribute("msje", "Bievenido al sistema");
             this.getServletConfig().getServletContext().getRequestDispatcher("/vistas/alumno/Alumno.jsp").forward(request, response);
-        }else if (usuario != null && usuario.getRol().getDescripcion().equals("Profesor")){
-            sesion  = request.getSession();
+        } else if (usuario != null && usuario.getRol().getDescripcion().equals("Profesor")) {
+            sesion = request.getSession();
             sesion.setAttribute("profesor", usuario);
             request.setAttribute("msje", "Bievenido al sistema");
             this.getServletConfig().getServletContext().getRequestDispatcher("/vistas/profesor/Profesor.jsp").forward(request, response);
-        }else{
+        } else if (usuario != null && usuario.getRol().getDescripcion().equals("Tutor")) {
+            sesion = request.getSession();
+            sesion.setAttribute("tutor", usuario);
+            request.setAttribute("msje", "Bievenido al sistema");
+            this.getServletConfig().getServletContext().getRequestDispatcher("/vistas/tutor/index.jsp").forward(request, response);
+        } else {
             request.setAttribute("msje", "Credenciales incorrectas");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
-        
+
     }
 
-    private void cerrarsession(HttpServletRequest request, HttpServletResponse response) throws Exception{
-        
+    private void cerrarsession(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
         HttpSession sesion = request.getSession();
-        sesion.setAttribute("usuario", null);
-        sesion.invalidate();
-        response.sendRedirect("login.jsp");
-        
+        DAOUSUARIOS dao;
+        Usuarios usuario;
+        usuario = this.obtenerUsuario(request);
+        dao = new DAOUSUARIOS();
+        usuario = dao.identificar(usuario);
+        if (usuario != null && usuario.getRol().getDescripcion().equals("Administrador")) {
+            sesion.setAttribute("usuario", null);
+            sesion.invalidate();
+            response.sendRedirect("login.jsp");
+        }else if (usuario != null && usuario.getRol().getDescripcion().equals("Alumno")){
+            sesion.setAttribute("alumno", null);
+            sesion.invalidate();
+            response.sendRedirect("login.jsp");
+        }else if (usuario != null && usuario.getRol().getDescripcion().equals("Profesor")){
+            sesion.setAttribute("profesor", null);
+            sesion.invalidate();
+            response.sendRedirect("login.jsp");
+        }else if (usuario != null && usuario.getRol().getDescripcion().equals("Tutor")){
+            sesion.setAttribute("tutor", null);
+            sesion.invalidate();
+            response.sendRedirect("login.jsp");
+        }else{
+            sesion.invalidate();
+            response.sendRedirect("login.jsp");
+        }
+
     }
 
     private Usuarios obtenerUsuario(HttpServletRequest request) {

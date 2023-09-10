@@ -26,7 +26,8 @@ public class srvRedireccionar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String accion = request.getParameter("accion");
 
-        if (accion != null && accion.equals("login")) {
+        
+        if (accion != null && accion.equals("login")) {                                                                         /*PANTALLAS ADMINISTRADOR*/
             request.getRequestDispatcher("/vistas/administrador/index.jsp").forward(request, response);
         } else if (accion != null && accion.equals("asignatura")) {
             request.getRequestDispatcher("/vistas/administrador/asignatura.jsp").forward(request, response);
@@ -40,9 +41,30 @@ public class srvRedireccionar extends HttpServlet {
             request.getRequestDispatcher("/vistas/administrador/aprovechamiento.jsp").forward(request, response);
         } else if (accion != null && accion.equals("calendario")) {
             request.getRequestDispatcher("/vistas/administrador/calendario.jsp").forward(request, response);
-        } else {
+        } else if (accion != null && accion.equals("index")) {                                                                  /*PANTALLA PROFESOR*/
+            request.getRequestDispatcher("/vistas/profesor/Profesor.jsp").forward(request, response);
+        } else if (accion != null && accion.equals("alumno")) {
+            request.getRequestDispatcher("/vistas/profesor/alumno.jsp").forward(request, response);
+        } else if (accion != null && accion.equals("grupo")) {
+            request.getRequestDispatcher("/vistas/profesor/grupo.jsp").forward(request, response);
+        } else if (accion != null && accion.equals("calificacion")) {
+            request.getRequestDispatcher("/vistas/profesor/calificaciones.jsp").forward(request, response);
+        }  else if (accion != null && accion.equals("calen")) {
+            request.getRequestDispatcher("/vistas/profesor/calendario.jsp").forward(request, response);
+        } else if (accion != null && accion.equals("indexalumno")) {                                                            /*PANTALLAS ALUMNO*/
+            request.getRequestDispatcher("/vistas/alumno/Alumno.jsp").forward(request, response);
+        } else if (accion != null && accion.equals("aprovechamientoalumno")) {
+            request.getRequestDispatcher("/vistas/alumno/aprovechamiento.jsp").forward(request, response);
+        } else if (accion != null && accion.equals("calendarioalumno")) {
+            request.getRequestDispatcher("/vistas/alumno/calendario.jsp").forward(request, response);
+        } else if (accion != null && accion.equals("indextutor")) {                                                             /*PANTALLAS TUTOR*/
+            request.getRequestDispatcher("/vistas/tutor/index.jsp").forward(request, response);
+        } else if (accion != null && accion.equals("tutoralumno")) {
+            request.getRequestDispatcher("/vistas/tutor/alumnos.jsp").forward(request, response);
+        } else if (accion != null && accion.equals("calendariotutor")) {
+            request.getRequestDispatcher("/vistas/tutor/calendario.jsp").forward(request, response);
+        } else{
             request.setAttribute("msje", "Credenciales incorrectas");
-            /*request.getRequestDispatcher("/vistas/administrador/login.jsp").forward(request, response);*/
         }
     }
 

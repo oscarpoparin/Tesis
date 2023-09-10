@@ -3,14 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/oscar/OneDrive/Documentos/Proyecto%20Tesis/Sistema%20de%20Gestion%20y%20Control%20Escolar/web/vistas/administrador/asignatura.jsp</file>
-            <file>file:/C:/Users/oscar/OneDrive/Documentos/Proyecto%20Tesis/Sistema%20de%20Gestion%20y%20Control%20Escolar/web/vistas/administrador/index.jsp</file>
-            <file>file:/C:/Users/oscar/OneDrive/Documentos/Proyecto%20Tesis/Sistema%20de%20Gestion%20y%20Control%20Escolar/web/assets/js/script.js</file>
-            <file>file:/C:/Users/oscar/OneDrive/Documentos/Proyecto%20Tesis/Sistema%20de%20Gestion%20y%20Control%20Escolar/src/java/controlador/srvRedireccionar.java</file>
-            <file>file:/C:/Users/oscar/OneDrive/Documentos/Proyecto%20Tesis/Sistema%20de%20Gestion%20y%20Control%20Escolar/web/assets/js/login.js</file>
-            <file>file:/C:/Users/oscar/OneDrive/Documentos/Proyecto%20Tesis/Sistema%20de%20Gestion%20y%20Control%20Escolar/web/assets/css/style.css</file>
-            <file>file:/C:/Users/oscar/OneDrive/Documentos/Proyecto%20Tesis/Sistema%20de%20Gestion%20y%20Control%20Escolar/src/java/controlador/srvUsuario.java</file>
-            <file>file:/C:/Users/oscar/OneDrive/Documentos/Proyecto%20Tesis/Sistema%20de%20Gestion%20y%20Control%20Escolar/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/oscar/OneDrive/Documentos/Proyecto%20Tesis/Sistema%20de%20Gestion%20y%20Control%20Escolar/web/vistas/alumno/Alumno.jsp</file>
+            <file>file:/C:/Users/oscar/OneDrive/Documentos/Proyecto%20Tesis/Sistema%20de%20Gestion%20y%20Control%20Escolar/web/assets/js/alum/aprovechamiento.js</file>
+            <file>file:/C:/Users/oscar/OneDrive/Documentos/Proyecto%20Tesis/Sistema%20de%20Gestion%20y%20Control%20Escolar/web/vistas/alumno/aprovechamiento.jsp</file>
         </group>
     </open-files>
 </project-private>
