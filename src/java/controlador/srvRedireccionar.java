@@ -57,14 +57,12 @@ public class srvRedireccionar extends HttpServlet {
                     List lista = asigdao.listaAsignaturas();
                     request.setAttribute("asignatura", lista);
                     break;
-                /*case "Buscar":
+                case "Buscar":
                     String clave = request.getParameter("txtClave");
                     String grado = request.getParameter("optGrado");
                     String turno = request.getParameter("optTurno");
-                    asig.setClave(clave);
-                    asig.setGrado(grado);
-                    asig.setTurno(turno);
-                    break;*/
+                    asigdao.listaAsignaturaSearch(clave,grado,turno);
+                    break;
                 default:
                     throw new AssertionError();
             }
