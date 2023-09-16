@@ -13,6 +13,33 @@ public class Tutores {
     private String colonia;
     private String cp;
     private String calle;
+    private String ocupacion;
+
+    public String getOcupacion() {
+        return ocupacion;
+    }
+
+    public void setOcupacion(String ocupacion) {
+        this.ocupacion = ocupacion;
+    }
+    private int interior;
+    private int exterior;
+
+    public int getInterior() {
+        return interior;
+    }
+
+    public void setInterior(int interior) {
+        this.interior = interior;
+    }
+
+    public int getExterior() {
+        return exterior;
+    }
+
+    public void setExterior(int exterior) {
+        this.exterior = exterior;
+    }
     private String matricula;
     private int rol;
     private String idPago;

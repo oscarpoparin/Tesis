@@ -12,6 +12,14 @@
         <servlet-name>srvContadorAlumnos</servlet-name>
         <servlet-class>controlador.srvContadorAlumnos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>srvAlumno</servlet-name>
+        <servlet-class>controlador.srvAlumno</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>srvTutor</servlet-name>
+        <servlet-class>controlador.srvTutor</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>srvUsuario</servlet-name>
         <url-pattern>/srvUsuario</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>srvContadorAlumnos</servlet-name>
         <url-pattern>/srvContadorAlumnos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvAlumno</servlet-name>
+        <url-pattern>/srvAlumno</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvTutor</servlet-name>
+        <url-pattern>/srvTutor</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

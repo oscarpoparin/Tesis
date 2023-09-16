@@ -10,7 +10,7 @@ public class Conexion {
     
     private final String ip = "localhost";
     private final String port = "3306";
-    private final String bd = "tesis";
+    private final String bd = "tesis1";
     private final String url = "jdbc:mysql://"+ip+":"+port+"/"+bd;
     private final String user = "root";
     private final String password = "";

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% if (session.getAttribute("usuario") != null) {%>
 <!DOCTYPE html>
@@ -179,34 +180,35 @@
                     </div>
                 </div>
             </div>
-            <div class="row g-3 d-flex justify-content-around mt-1">
-                <div class="col-auto col-auto">
+            <form action="srvRedireccionar?accion=asignatura" method="POST">
+                <div class="row g-3 d-flex justify-content-around mt-1">
+                    <div class="col-auto col-auto">
+                        <div class="col-auto">
+                            <input type="text" class="form-control" id="searchNombre" name="txtClave" value="" placeholder="NombreAlumno">
+                        </div>
+                    </div>
                     <div class="col-auto">
-                        <input type="text" class="form-control" id="searchNombre" value="" placeholder="NombreAlumno">
+                        <select class="form-select text-capitalize fs-6" aria-label="Default select example" name="optGrado">
+                            <option selected>grado</option>
+                            <c:forEach items="${asignatura}" var="asignatura">
+                                <option>${asignatura.grado}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <select class="form-select text-capitalize fs-6" aria-label="Default select example" name="optTurno">
+                            <option selected>turno</option>
+                            <option value="0">matutino</option>
+                            <option value="1">vespertino</option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn btn-danger mb-3 me-3" href="srvRedireccionar?accion=asignatura&opcion=Buscar&clave">
+                            <i class="bi bi-search icon me-1"></i> Buscar
+                        </a>
                     </div>
                 </div>
-                <div class="col-auto">
-                    <select class="form-select text-capitalize fs-6" aria-label="Default select example">
-                        <option selected>grado</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <select class="form-select text-capitalize fs-6" aria-label="Default select example">
-                        <option selected>turno</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <button type="button" class="btn btn-danger mb-3 me-3">
-                        <i class="bi bi-search icon me-1"></i> Buscar
-                    </button>
-                </div>
-            </div>
+            </form>
             <div class="row p-2 mt-1">
                 <div class="container">
                     <div class="table-responsive t-h-max">
@@ -220,276 +222,38 @@
                                 </tr>
                             </thead>
                             <tbody class="bg text-capitalize">
-                                <tr>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6 class="text-uppercase">clave</h6>
+                                <c:forEach var="asig" items="${asignatura}">
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6 class="text-uppercase">${asig.getClave}</h6>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>nombre</h6>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>${asig.getNombre}</h6>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>grado</h6>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>${asig.getGrado}</h6>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>turno</h6>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-content-center justify-content-center">
+                                                    <h6>${asig.getTurno}</h6>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                                                <tr>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6 class="text-uppercase">clave</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>nombre</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>grado</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>turno</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                                                <tr>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6 class="text-uppercase">clave</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>nombre</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>grado</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>turno</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                                                <tr>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6 class="text-uppercase">clave</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>nombre</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>grado</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>turno</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                                                <tr>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6 class="text-uppercase">clave</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>nombre</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>grado</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>turno</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                                                <tr>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6 class="text-uppercase">clave</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>nombre</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>grado</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>turno</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                                                <tr>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6 class="text-uppercase">clave</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>nombre</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>grado</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>turno</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                                                <tr>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6 class="text-uppercase">clave</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>nombre</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>grado</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>turno</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                                                <tr>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6 class="text-uppercase">clave</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>nombre</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>grado</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <div class="d-flex align-content-center justify-content-center">
-                                                <h6>turno</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>

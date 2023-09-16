@@ -181,7 +181,7 @@
                                     <i class="bi bi-people-fill icon fs-5"></i>
                                 </div>
                                 <div class="text-card">
-                                    <h3 class="text-light fs-5">1,500</h3>
+                                    <h3 class="text-light fs-5">${alumnosInscritos}</h3>
                                 </div>
                                 <div class="line-card">
                                     <hr class="line">
@@ -197,7 +197,7 @@
                                     <i class="bi bi-people-fill icon fs-5"></i>
                                 </div>
                                 <div class="text-card">
-                                    <h3 class="text-light fs-5">1,500</h3>
+                                    <h3 class="text-light fs-5">${alumnosEgresados}</h3>
                                 </div>
                                 <div class="line-card">
                                     <hr class="line">
@@ -213,7 +213,7 @@
                                     <i class="bi bi-mortarboard-fill icon fs-5"></i>
                                 </div>
                                 <div class="text-card">
-                                    <h3 class="text-light fs-5">1,500</h3>
+                                    <h3 class="text-light fs-5">${totalDocentes}</h3>
                                 </div>
                                 <div class="line-card">
                                     <hr class="line">
@@ -229,7 +229,7 @@
                                     <i class="bi bi-person-check-fill icon fs-5"></i>
                                 </div>
                                 <div class="text-card">
-                                    <h3 class="text-light fs-5">1,500</h3>
+                                    <h3 class="text-light fs-5">${asistencia}</h3>
                                 </div>
                                 <div class="line-card">
                                     <hr class="line">
