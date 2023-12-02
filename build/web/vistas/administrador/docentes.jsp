@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% if (session.getAttribute("usuario") != null) {%>
 <!DOCTYPE html>
@@ -127,44 +128,44 @@
                 </li>
                 <li class="li">
                     <span class="icons" id="subjects" data-tippy-content="ASIGNATURAS" tabindex="0" data-tippy-placement="right"
-                          onclick="subjectPage('srvRedireccionar?accion=asignatura')">
+                          onclick="subjectPage('srvRedireccionar?accion=asignatura&opcion=Listar')">
                         <i class="bi bi-book-half icon a-icon"></i>
-                        <a href="srvRedireccionar?accion=asignatura" onclick="subjectPage('srvRedireccionar?accion=asignatura')">asignaturas</a>
+                        <a id="cambiarEstilos" href="#" onclick="subjectPage('srvRedireccionar?accion=asignatura&opcion=Listar')">asignaturas</a>
                     </span>
                 </li>
                 <li class="li">
                     <span class="icons" id="teachers" data-tippy-content="DOCENTES" tabindex="0" data-tippy-placement="right"
-                          onclick="teacherPage('srvRedireccionar?accion=docentes')">
+                          onclick="teacherPage('srvRedireccionar?accion=docentes&opcion=Listar')">
                         <i class="bi bi-mortarboard-fill icon a-icon"></i>
-                        <a href="srvRedireccionar?accion=docentes">docentes</a>
+                        <a href="srvRedireccionar?accion=docentes&opcion=Listar">docentes</a>
                     </span>
                 </li>
                 <li class="li">
                     <span class="icons" id="students" data-tippy-content="ALUMNOS" tabindex="0" data-tippy-placement="right"
-                          onclick="studentsPage('srvRedireccionar?accion=alumnos')">
+                          onclick="studentsPage('srvRedireccionar?accion=alumnos&opcion=Listar')">
                         <i class="bi bi-people-fill icon a-icon"></i>
-                        <a href="srvRedireccionar?accion=alumnos">alumnos</a>
+                        <a href="srvRedireccionar?accion=alumnos&opcion=Listar">alumnos</a>
                     </span>
                 </li>
                 <li class="li">
                     <span class="icons" id="payment" data-tippy-content="PAGOS" tabindex="0" data-tippy-placement="right"
-                          onclick="paymentPage('srvRedireccionar?accion=pagos')">
+                          onclick="paymentPage('srvRedireccionar?accion=pagos&opcion=Listar')">
                         <i class="bi bi-cash-coin icon a-icon"></i>
-                        <a href="srvRedireccionar?accion=pagos">pagos</a>
+                        <a href="srvRedireccionar?accion=pagos&opcion=Listar">pagos</a>
                     </span>
                 </li>
                 <li class="li">
                     <span class="icons" id="rendimiento" data-tippy-content="APROVECHAMIENTO ACADEMICO" tabindex="0"
-                          data-tippy-placement="right" onclick="rendimientoPage('srvRedireccionar?accion=aprovechamiento')">
+                          data-tippy-placement="right" onclick="rendimientoPage('srvRedireccionar?accion=aprovechamiento&opcion=Listar')">
                         <i class="bi bi-file-earmark-person-fill icon a-icon"></i>
-                        <a href="srvRedireccionar?accion=aprovechamiento">rendimiento academico</a>
+                        <a href="srvRedireccionar?accion=aprovechamiento&opcion=Listar">rendimiento academico</a>
                     </span>
                 </li>
                 <li class="li">
                     <span class="icons" id="calendar" data-tippy-content="CALENDARIO" tabindex="0" data-tippy-placement="right"
-                          onclick="calendarPage('srvRedireccionar?accion=calendario')">
+                          onclick="calendarPage('srvRedireccionar?accion=calendario&opcion=Listar')">
                         <i class="bi bi-calendar-date icon a-icon"></i>
-                        <a href="srvRedireccionar?accion=calendario">calendario</a>
+                        <a href="srvRedireccionar?accion=calendario&opcion=Listar">calendario</a>
                     </span>
                 </li>
             </ul>
@@ -188,7 +189,7 @@
                                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
                                          aria-labelledby="panelsStayOpen-headingOne">
                                         <div class="accordion-body text-light" style="background: #343a40;">
-                                            <form class="row g-3">
+                                            <form action="srvRedireccionar?accion=docentes" method="POST" class="row g-3">
                                                 <div class="container p-2">
                                                     <div class="row p-1">
                                                         <div class="col-md-4">
@@ -291,25 +292,25 @@
                                                             <div class="col-md-4">
                                                                 <select class="form-select text-capitalize fs-6" aria-label="Default select example">
                                                                     <option selected>docente</option>
-                                                                    <option value="1">One</option>
-                                                                    <option value="2">Two</option>
-                                                                    <option value="3">Three</option>
+                                                                    <c:forEach items="${profesor}" var="profesor">
+                                                                        <option>${profesor.getTbNombreProfesor}</option>
+                                                                    </c:forEach>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <select class="form-select text-capitalize fs-6" aria-label="Default select example">
                                                                     <option selected>grado</option>
-                                                                    <option value="1">One</option>
-                                                                    <option value="2">Two</option>
-                                                                    <option value="3">Three</option>
+                                                                    <c:forEach items="${asignatura}" var="asignatura">
+                                                                        <option>${asignatura.getGrado}</option>
+                                                                    </c:forEach>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <select class="form-select text-capitalize fs-6" aria-label="Default select example">
                                                                     <option selected>turno</option>
-                                                                    <option value="1">One</option>
-                                                                    <option value="2">Two</option>
-                                                                    <option value="3">Three</option>
+                                                                    <c:forEach items="${asignatura}" var="asignatura">
+                                                                        <option>${asignatura.getTurno}</option>
+                                                                    </c:forEach>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -317,14 +318,14 @@
                                                             <div class="col-md-6">
                                                                 <select class="form-select text-capitalize fs-6" aria-label="Default select example">
                                                                     <option selected>asignatura</option>
-                                                                    <option value="1">One</option>
-                                                                    <option value="2">Two</option>
-                                                                    <option value="3">Three</option>
+                                                                    <c:forEach items="${asignatura}" var="asignatura">
+                                                                        <option>${asignatura.getNombre}</option>
+                                                                    </c:forEach>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-4 mt-2">
                                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                                    <button class="btn btn-danger" type="submit" id="asignar">asignar</button>
+                                                                    <a class="btn btn-danger" id="asignar" href="srvRedireccionar?accion=docentes&opcion=Actualizar">asignar</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -357,9 +358,9 @@
                                 <div class="col-6">
                                     <select class="form-select text-capitalize fs-6" aria-label="Default select example">
                                         <option selected>grado</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <c:forEach items="${asignatura}" var="asignatura">
+                                            <option>${asignatura.getGrado}</option>
+                                        </c:forEach>
                                     </select>
                                 </div>
                             </div>
@@ -367,17 +368,16 @@
                                 <div class="col-6">
                                     <select class="form-select text-capitalize fs-6" aria-label="Default select example">
                                         <option selected>turno</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <option value="0">matutino</option>
+                                        <option value="1">vespertino</option>
                                     </select>
                                 </div>
                                 <div class="col-6">
                                     <select class="form-select text-capitalize fs-6" aria-label="Default select example">
                                         <option selected>asignatura</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <c:forEach items="${asignatura}" var="asignatura">
+                                            <option>${asignatura.getNombre}</option>
+                                        </c:forEach>
                                     </select>
                                 </div>
                             </div>
@@ -395,357 +395,47 @@
                                         </tr>
                                     </thead>
                                     <tbody class="bg text-capitalize">
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">nombre completo</h5>
+                                        <c:forEach var="profesor" items="${profesor}">
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <div class="d-flex align-content-center justify-content-center">
+                                                            <h5 class="text-uppercase fs-6">${profesor.getTbNombreProfesor}</h5>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">grado</h5>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <div class="d-flex align-content-center justify-content-center">
+                                                            <h5 class="text-uppercase fs-6">${profesor.getGrado}</h5>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">turno</h5>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <div class="d-flex align-content-center justify-content-center">
+                                                            <h5 class="text-uppercase fs-6">${profesor.getTurno}</h5>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">matematicas</h5>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <div class="d-flex align-content-center justify-content-center">
+                                                            <h5 class="text-uppercase fs-6">${profesor.getAsignatura}</h5>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-items-center">
-                                                        <button type="submit" class="btn btn-dark btn-sm">
-                                                            <i class="bi bi-trash3-fill fs-6"></i>
-                                                        </button>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <div class="d-flex align-items-center">
+                                                            <a class="btn btn-dark btn-sm" href="srvRedireccionar?accion=docentes&opcion=Eliminar&nombre=${profesor.getNombre}&asignatura=${profesor.getAsignatura}">
+                                                                <i class="bi bi-trash3-fill fs-6"></i>
+                                                            </a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">nombre completo</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">grado</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">turno</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">matematicas</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-items-center">
-                                                        <button type="submit" class="btn btn-dark btn-sm">
-                                                            <i class="bi bi-trash3-fill fs-6"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">nombre completo</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">grado</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">turno</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">matematicas</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-items-center">
-                                                        <button type="submit" class="btn btn-dark btn-sm">
-                                                            <i class="bi bi-trash3-fill fs-6"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">nombre completo</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">grado</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">turno</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">matematicas</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-items-center">
-                                                        <button type="submit" class="btn btn-dark btn-sm">
-                                                            <i class="bi bi-trash3-fill fs-6"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">nombre completo</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">grado</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">turno</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">matematicas</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-items-center">
-                                                        <button type="submit" class="btn btn-dark btn-sm">
-                                                            <i class="bi bi-trash3-fill fs-6"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">nombre completo</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">grado</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">turno</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">matematicas</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-items-center">
-                                                        <button type="submit" class="btn btn-dark btn-sm">
-                                                            <i class="bi bi-trash3-fill fs-6"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">nombre completo</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">grado</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">turno</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">matematicas</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-items-center">
-                                                        <button type="submit" class="btn btn-dark btn-sm">
-                                                            <i class="bi bi-trash3-fill fs-6"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">nombre completo</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">grado</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">turno</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">matematicas</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-items-center">
-                                                        <button type="submit" class="btn btn-dark btn-sm">
-                                                            <i class="bi bi-trash3-fill fs-6"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">nombre completo</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">grado</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">turno</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-content-center justify-content-center">
-                                                        <h5 class="text-uppercase fs-6">matematicas</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="d-flex align-items-center">
-                                                        <button type="submit" class="btn btn-dark btn-sm">
-                                                            <i class="bi bi-trash3-fill fs-6"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
                                     </tbody>
                                 </table>
                             </div>

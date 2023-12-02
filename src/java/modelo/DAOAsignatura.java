@@ -1,6 +1,5 @@
 package modelo;
 
-import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -16,7 +15,7 @@ public class DAOAsignatura {
 
     public List listaAsignaturas() {
 
-        String sql = "SELECT * FROM VistaAsignaturas;";
+        String sql = "SELECT * FROM tb_asignaturas1;";
         List<Asignatura> listaAsignatura = new ArrayList<>();
         con = new Conexion();
 

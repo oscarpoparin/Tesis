@@ -44,39 +44,39 @@
                                     </span>
                                 </li>
                                 <li class="li">
-                                    <span class="icons" onclick="subjectPage('srvRedireccionar?accion=asignatura')">
+                                    <span class="icons" onclick="subjectPage('srvRedireccionar?accion=asignatura&opcion=Listar')">
                                         <i class="bi bi-book-half icon a-icon"></i>
-                                        <a href="srvRedireccionar?accion=asignatura">asignaturas</a>
+                                        <a href="srvRedireccionar?accion=asignatura&opcion=Listar">asignaturas</a>
                                     </span>
                                 </li>
                                 <li class="li">
-                                    <span class="icons" onclick="teacherPage('srvRedireccionar?accion=docentes')">
+                                    <span class="icons" onclick="teacherPage('srvRedireccionar?accion=docentes&opcion=Listar')">
                                         <i class="bi bi-mortarboard-fill icon a-icon"></i>
-                                        <a href="srvRedireccionar?accion=docentes">docentes</a>
+                                        <a href="srvRedireccionar?accion=docentes&opcion=Listar">docentes</a>
                                     </span>
                                 </li>
                                 <li class="li">
-                                    <span class="icons" onclick="studentsPage('srvRedireccionar?accion=alumnos')">
+                                    <span class="icons" onclick="studentsPage('srvRedireccionar?accion=alumnos&opcion=Listar')">
                                         <i class="bi bi-people-fill icon a-icon"></i>
-                                        <a href="srvRedireccionar?accion=alumnos">alumnos</a>
+                                        <a href="srvRedireccionar?accion=alumnos&opcion=Listar">alumnos</a>
                                     </span>
                                 </li>
                                 <li class="li">
-                                    <span class="icons" onclick="paymentPage('srvRedireccionar?accion=pagos')">
+                                    <span class="icons" onclick="paymentPage('srvRedireccionar?accion=pagos&opcion=Listar')">
                                         <i class="bi bi-cash-coin icon a-icon"></i>
-                                        <a href="srvRedireccionar?accion=pagos">pagos</a>
+                                        <a href="srvRedireccionar?accion=pagos&opcion=Listar">pagos</a>
                                     </span>
                                 </li>
                                 <li class="li">
-                                    <span class="icons" onclick="rendimientoPage('srvRedireccionar?accion=aprovechamiento')">
+                                    <span class="icons" onclick="rendimientoPage('srvRedireccionar?accion=aprovechamiento&opcion=Listar')">
                                         <i class="bi bi-file-earmark-person-fill icon a-icon"></i>
-                                        <a href="srvRedireccionar?accion=aprovechamiento">rendimiento academico</a>
+                                        <a href="srvRedireccionar?accion=aprovechamiento&opcion=Listar">rendimiento academico</a>
                                     </span>
                                 </li>
                                 <li class="li">
-                                    <span class="icons" onclick="calendarPage('srvRedireccionar?accion=calendario')">
+                                    <span class="icons" onclick="calendarPage('srvRedireccionar?accion=calendario&opcion=Listar')">
                                         <i class="bi bi-calendar-date icon a-icon"></i>
-                                        <a href="srvRedireccionar?accion=calendario">calendario</a>
+                                        <a href="srvRedireccionar?accion=calendario&opcion=Listar">calendario</a>
                                     </span>
                                 </li>
                             </ul>
@@ -122,49 +122,49 @@
                     <span class="icons" id="dashboard" data-tippy-content="DASHBOARD" tabindex="0" data-tippy-placement="right"
                           onclick="dashboardPage('srvRedireccionar?accion=login')">
                         <i class="bi bi-house-door-fill icon a-icon"></i>
-                        <a href="srvRedireccionar?accion=login">Dashboards</a>
+                        <a href="srvRedireccionar?accion=login" target="myFrame">Dashboards</a>
                     </span>
                 </li>
                 <li class="li">
                     <span class="icons" id="subjects" data-tippy-content="ASIGNATURAS" tabindex="0" data-tippy-placement="right"
-                          onclick="subjectPage('srvRedireccionar?accion=asignatura')">
+                          onclick="subjectPage('srvRedireccionar?accion=asignatura&opcion=Listar')">
                         <i class="bi bi-book-half icon a-icon"></i>
-                        <a id="cambiarEstilos" href="#" onclick="subjectPage('srvRedireccionar?accion=asignatura')">asignaturas</a>
+                        <a id="cambiarEstilos" href="srvRedireccionar?accion=asignatura&opcion=Listar" target="myFrame">asignaturas</a>
                     </span>
                 </li>
                 <li class="li">
                     <span class="icons" id="teachers" data-tippy-content="DOCENTES" tabindex="0" data-tippy-placement="right"
-                          onclick="teacherPage('srvRedireccionar?accion=docentes')">
+                          onclick="teacherPage('srvRedireccionar?accion=docentes&opcion=Listar')">
                         <i class="bi bi-mortarboard-fill icon a-icon"></i>
-                        <a href="srvRedireccionar?accion=docentes">docentes</a>
+                        <a href="srvRedireccionar?accion=docentes&opcion=Listar" target="myFrame">docentes</a>
                     </span>
                 </li>
                 <li class="li">
                     <span class="icons" id="students" data-tippy-content="ALUMNOS" tabindex="0" data-tippy-placement="right"
-                          onclick="studentsPage('srvRedireccionar?accion=alumnos')">
+                          onclick="studentsPage('srvRedireccionar?accion=alumnos&opcion=Listar')">
                         <i class="bi bi-people-fill icon a-icon"></i>
-                        <a href="srvRedireccionar?accion=alumnos">alumnos</a>
+                        <a href="srvRedireccionar?accion=alumnos&opcion=Listar" target="myFrame">alumnos</a>
                     </span>
                 </li>
                 <li class="li">
                     <span class="icons" id="payment" data-tippy-content="PAGOS" tabindex="0" data-tippy-placement="right"
-                          onclick="paymentPage('srvRedireccionar?accion=pagos')">
+                          onclick="paymentPage('srvRedireccionar?accion=pagos&opcion=Listar')">
                         <i class="bi bi-cash-coin icon a-icon"></i>
-                        <a href="srvRedireccionar?accion=pagos">pagos</a>
+                        <a href="srvRedireccionar?accion=pagos&opcion=Listar" target="myFrame">pagos</a>
                     </span>
                 </li>
                 <li class="li">
                     <span class="icons" id="rendimiento" data-tippy-content="APROVECHAMIENTO ACADEMICO" tabindex="0"
-                          data-tippy-placement="right" onclick="rendimientoPage('srvRedireccionar?accion=aprovechamiento')">
+                          data-tippy-placement="right" onclick="rendimientoPage('srvRedireccionar?accion=aprovechamiento&opcion=Listar')">
                         <i class="bi bi-file-earmark-person-fill icon a-icon"></i>
-                        <a href="srvRedireccionar?accion=aprovechamiento">rendimiento academico</a>
+                        <a href="srvRedireccionar?accion=aprovechamiento&opcion=Listar" target="myFrame">rendimiento academico</a>
                     </span>
                 </li>
                 <li class="li">
                     <span class="icons" id="calendar" data-tippy-content="CALENDARIO" tabindex="0" data-tippy-placement="right"
-                          onclick="calendarPage('srvRedireccionar?accion=calendario')">
+                          onclick="calendarPage('srvRedireccionar?accion=calendario&opcion=Listar')">
                         <i class="bi bi-calendar-date icon a-icon"></i>
-                        <a href="srvRedireccionar?accion=calendario">calendario</a>
+                        <a href="srvRedireccionar?accion=calendario&opcion=Listar" target="myFrame">calendario</a>
                     </span>
                 </li>
             </ul>

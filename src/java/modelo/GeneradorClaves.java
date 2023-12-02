@@ -28,24 +28,22 @@ public class GeneradorClaves {
 
     }
 
-    public static String generarClaveAsignatura(String nombre, int numero) {
+    public static String generarClaveAsignatura(String nombre, String turno, int numero) {
 
         String nomAsignatura = nombre.substring(0, 3).toUpperCase();
+        String turnoAsignatura = turno.substring(0, 1).toUpperCase();
         int semestre = numero;
         String numeroRomano = semestre(semestre);
 
         Random rand = new Random();
         int numeroAleatorio1 = rand.nextInt(9) + 1;
-        int numeroAleatorio2 = rand.nextInt(9) + 1;
-        int numeroAleatorio3 = rand.nextInt(9) + 1;
         String aleatorio1 = String.format("%01d", numeroAleatorio1);
-        String aleatorio2 = String.format("%01d", numeroAleatorio2);
-        String aleatorio3 = String.format("%01d", numeroAleatorio3);
 
-        String clave = nomAsignatura + numeroRomano + aleatorio1 + aleatorio2 + aleatorio3;
+
+        String clave = nomAsignatura + numeroRomano + turnoAsignatura + aleatorio1;
 
         if (clave.length() > 8 && clave.length() != 8) {
-            String clave1 = nomAsignatura + numeroRomano + aleatorio1 + aleatorio2;
+            String clave1 = nomAsignatura + numeroRomano + turnoAsignatura + aleatorio1;
             return clave1;
         }
 

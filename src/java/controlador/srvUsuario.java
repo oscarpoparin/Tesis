@@ -105,14 +105,14 @@ public class srvUsuario extends HttpServlet {
         if (usuario != null && usuario.getRol().getDescripcion().equals("Administrador")) {
             sesion = request.getSession();
             sesion.setAttribute("usuario", usuario);
-            int alumnosInscritos = admindao.alumnosInscritos();
-            int alumnosEgresados = admindao.alumnosEgresados();
-            int totalDocentes = admindao.totalDocentes();
-            int asistencia = admindao.asistenciaTotal();
-            request.setAttribute("alumnosInscritos", alumnosInscritos);
-            request.setAttribute("alumnosEgresados", alumnosEgresados);
-            request.setAttribute("totalDocentes", totalDocentes);
-            request.setAttribute("asistencia", asistencia);
+//            int alumnosInscritos = admindao.alumnosInscritos();
+//            int alumnosEgresados = admindao.alumnosEgresados();
+//            int totalDocentes = admindao.totalDocentes();
+//            //int asistencia = admindao.asistenciaTotal();
+//            request.setAttribute("alumnosInscritos", alumnosInscritos);
+//            request.setAttribute("alumnosEgresados", alumnosEgresados);
+//            request.setAttribute("totalDocentes", totalDocentes);
+            //request.setAttribute("asistencia", asistencia);
             this.getServletConfig().getServletContext().getRequestDispatcher("/vistas/administrador/index.jsp").forward(request, response);
         } else if (usuario != null && usuario.getRol().getDescripcion().equals("Alumno")) {
             sesion = request.getSession();
@@ -139,29 +139,34 @@ public class srvUsuario extends HttpServlet {
 
     private void cerrarsession(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-        HttpSession sesion = request.getSession();
+
         DAOUSUARIOS dao;
         Usuarios usuario;
         usuario = this.obtenerUsuario(request);
         dao = new DAOUSUARIOS();
         usuario = dao.identificar(usuario);
         if (usuario != null && usuario.getRol().getDescripcion().equals("Administrador")) {
+            HttpSession sesion = request.getSession(false);
             sesion.setAttribute("usuario", null);
             sesion.invalidate();
             response.sendRedirect("login.jsp");
         } else if (usuario != null && usuario.getRol().getDescripcion().equals("Alumno")) {
+            HttpSession sesion = request.getSession(false);
             sesion.setAttribute("alumno", null);
             sesion.invalidate();
             response.sendRedirect("login.jsp");
         } else if (usuario != null && usuario.getRol().getDescripcion().equals("Profesor")) {
+            HttpSession sesion = request.getSession(false);
             sesion.setAttribute("profesor", null);
             sesion.invalidate();
             response.sendRedirect("login.jsp");
         } else if (usuario != null && usuario.getRol().getDescripcion().equals("Tutor")) {
+            HttpSession sesion = request.getSession(false);
             sesion.setAttribute("tutor", null);
             sesion.invalidate();
             response.sendRedirect("login.jsp");
         } else {
+            HttpSession sesion = request.getSession(false);
             sesion.invalidate();
             response.sendRedirect("login.jsp");
         }

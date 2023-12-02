@@ -149,7 +149,7 @@
         </div>
         <br>
         <div class="container p-4 border-opacity-10 mt-5">
-            <div class="row p-2 border">
+            <div class="row p-2">
                 <div class="col-4 p-2">
                     <div class="card-body border border-light rounded p-2">
                         <h6 class="card-title text-light text-uppercase p-3 fs-6">registrar asistencia</h6>
@@ -230,7 +230,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="row border">
+                    <div class="row">
                         <div class="table-responsive t-h-max">
                             <table class="table table-dark table-hover mb-0 border-secondary text-center text-uppercase fs-6">
                                 <thead>
@@ -256,7 +256,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row p-2 border">
+            <div class="row p-2">
                 <div class="col-8 p-4">
                     <h4 class="text-light text-uppercase text-center">Calificaciones por grupo</h4>
                     <canvas id="califGrupal"></canvas>

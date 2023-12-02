@@ -18,6 +18,51 @@ public class Profesores {
     private String colonia;
     private String cp;
     private String calle;
+    private String numExterior;
+    private String numinterior;
+    private String grado;
+    private String turno;
+    private String asignatura;
+
+    public String getGrado() {
+        return grado;
+    }
+
+    public void setGrado(String grado) {
+        this.grado = grado;
+    }
+
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
+    }
+
+    public String getAsignatura() {
+        return asignatura;
+    }
+
+    public void setAsignatura(String asignatura) {
+        this.asignatura = asignatura;
+    }
+
+    public String getNumExterior() {
+        return numExterior;
+    }
+
+    public void setNumExterior(String numExterior) {
+        this.numExterior = numExterior;
+    }
+
+    public String getNuminterior() {
+        return numinterior;
+    }
+
+    public void setNuminterior(String numinterior) {
+        this.numinterior = numinterior;
+    }
     private int rol;
 
     public String getIdProfesor() {
@@ -138,6 +183,10 @@ public class Profesores {
 
     public void setRol(int rol) {
         this.rol = rol;
+    }
+    
+    public String getNombreProfesor() {
+        return nombre + " " + paterno + " " + materno;
     }
 
 }

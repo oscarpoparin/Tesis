@@ -21,7 +21,7 @@
                     <span id="pass">Contraseña</span>
                     <i class="bi bi-key-fill key"></i>
                 </div>
-                <input type="submit" value="Ingresar" />
+                <input type="submit" value="Ingresar" href="vistas/administrador/index.jsp"/>
             </form>
             <div class="link">
                 <a onclick="toggleContainers();" class="enlace">

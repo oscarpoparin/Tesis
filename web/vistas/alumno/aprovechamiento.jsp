@@ -121,24 +121,24 @@
             </ul>
         </div>
         <br>
-        <div class="container p-4 border-opacity-10 mt-5 border">
+        <div class="container p-4 border-opacity-10 mt-5">
             <div class="row">
-                <div class="col p-4 border">
-                    <div class="row border">
-                        <div class="col-12 border">
+                <div class="col p-4">
+                    <div class="row">
+                        <div class="col-12">
                             <h4 class="text-light text-uppercase text-center">asistencia</h4>
                             <canvas id="asistencia_al"></canvas>
                         </div>
                     </div>
-                    <div class="row border">
+                    <div class="row">
                         <div class="col-12 p-4">
                             <h4 class="text-light text-uppercase text-center">semestre</h4>
                             <canvas id="semestre_al"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="col border">
-                    <div class="row p-4 border">
+                <div class="col">
+                    <div class="row p-4">
                         <div class="row">
                             <div class="col-12 p-2">
                                 <a href="ruta-del-archivo-a-descargar" class="btn btn-secondary float-end">
@@ -197,7 +197,7 @@
                             </table>
                         </div>
                     </div>
-                    <div class="row border">
+                    <div class="row">
                         <div class="col-12 p-4">
                             <h4 class="text-light text-uppercase text-center">Calificaciones</h4>
                             <canvas id="calificaciones_al"></canvas>
